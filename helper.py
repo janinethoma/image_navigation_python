@@ -65,7 +65,7 @@ def greedy_anchors(xy, a_dist, a_nn):
     selected = [random.randrange(n)]
     remaining = np.setdiff1d(range(n), selected).tolist()
     while len(selected) < n:
-        tree = KDTree([xy[i] for i in selected])
+        tree = KDTree(np.array([xy[i] for i in selected]))
         nn_dists, _ = tree.query([xy[i] for i in remaining], return_distance=True)
 
         i_max = np.argmax(nn_dists)
@@ -78,7 +78,7 @@ def greedy_anchors(xy, a_dist, a_nn):
 
     # Define anchor neighbourhood as anchor plus a_nn nearest neighbours
     selected.sort()
-    tree = KDTree([xy[i] for i in remaining])
+    tree = KDTree(np.array([xy[i] for i in remaining]))
     a_nbh = np.empty([len(selected), 1 + a_nn], int)
     for a in range(len(selected)):
         nn_i = tree.query([xy[selected[a]]], return_distance=False, k=a_nn)

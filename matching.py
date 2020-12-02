@@ -2,6 +2,7 @@ import numpy as np
 import math
 from helper import huber, adjacent_edges
 import mosek.fusion as mf
+from numpy import matlib
 
 
 def match_with_flow(query_xy, ref_xy, visual_dist, topN=0):

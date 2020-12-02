@@ -100,7 +100,7 @@ def sample_with_flow(xy, edges, source_idx, sink_idx, geo_dists, feat_dists, num
     lhs1 = mf.Expr.mul(0.5, mf.Expr.sub(arc_cap, f))
     lhs2 = mf.Expr.mulElm(z, (1. / (np.array(arc_sens) * np.array(arc_cap))))
     stack = mf.Expr.hstack(lhs1, lhs2, f)
-    M.constraint(stack, mf.Domain.inRotatedQCone().axis(2))  # Each row is in a rotated quadratic cone
+    M.constraint(stack, mf.Domain.inRotatedQCone().axis(1))  # Each row is in a rotated quadratic cone
 
     print('Set constraints. Solving.')
 
