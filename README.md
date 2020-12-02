@@ -1,7 +1,7 @@
  Python demo for our CVPR'2019 paper
 # [Mapping, Localization and Path Planning for Image-based Navigation using Visual Features and Map](https://arxiv.org/pdf/1812.03795.pdf)
 
-This code was tested with Python 3.5.5 and [mosek 8.1.80](https://www.mosek.com/downloads/).
+This code was tested with Python 3.8 and [mosek 9.2.29](https://www.mosek.com/downloads/).
 The easiest way to install mosek is:
 ```
 conda install -c mosek mosek
